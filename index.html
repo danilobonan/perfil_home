@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<!--Definindo um documento HTML5-->
+<html lang="pt-br">
+  <!-- Documento Element (elemento HTML);Elemento root (raíz)-->
+
+  <!-- lang = linguagem-->
+
+  <!--trocando a class para "", voltamos ao dark mode e etc-->
+  <head>
+    <!--parent e children (elementos pai e filho)-->
+    <!--head = ajusta config. do documento (não são visíveis p/ quem está acessando a página)-->
+
+    <!--configurações do documento:-->
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500&display=swap"
+      rel="stylesheet"
+    />
+
+    <meta charset="UTF-8" />
+    <!--define quais conjuntos de caractere vamos usar na página, permite por ex que aceite "~", "ç", etc-->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <!--permitir combatibilidade c/ navegadores + antigos-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!--define que a parte visível (name="viewport") tenha o conteúdo (content) da largura (width) do dispositivo (device); faz uma escala inicial (initial-scale), ou seja, se tem zoom ou não, de 1.0-->
+    <!--viewport = tudo que é visível na página abaixo do "cabeçalho"-->
+    <title>DevLinks</title>
+    <!--elemento visível p/ quem acessa a página-->
+    <link rel="stylesheet" href="./style.css" />
+    <!--rel (relacionamento) c/ o arquivo tipo stylesheet-->
+    <!--"./ = está nessa própria página/pasta ou digita o nome do arquivo"-->
+  </head>
+  <!--tag filha ou node (nó)-->
+  <body>
+    <!--parte visível p/ quem acessa a página-->
+    <div id="conteiner">
+      <div id="profile">
+        <img src="./assets/avatar.png" alt="Foto de Danilo Bonan" />
+        <p>@danilobonan</p>
+      </div>
+
+      <div id="switch" onclick="toggleMode()">
+        <button></button>
+        <span></span>
+      </div>
+
+      <!--criação de listas:-->
+      <ul>
+        <!--item da lista:-->
+        <li>
+          <a href="#" target="_blank">Inscrever-se no NLW</a>
+          <!--"#" significa que vou clicar no link, mas não vou à lugar nenhum-->
+        </li>
+
+        <li>
+          <a href="#" target="_blank">Baixar meu e-book</a>
+        </li>
+
+        <li>
+          <a href="#" target="_blank">Veja meu portfólio</a>
+        </li>
+
+        <li>
+          <a href="#" target="_blank">Conheça o Explorer</a>
+          <!--atributo "target" recebendo o elemento "_blank" = mantém o usuário na minha página e abre o link em outra-->
+        </li>
+      </ul>
+      <div id="social-links">
+        <a href="#" target="_blank">
+          <ion-icon name="logo-github"></ion-icon>
+        </a>
+        <a href="#" target="_blank">
+          <ion-icon name="logo-instagram"></ion-icon>
+        </a>
+        <a href="#" target="_blank">
+          <ion-icon name="logo-youtube"></ion-icon>
+        </a>
+        <a href="#" target="_blank">
+          <ion-icon name="logo-linkedin"></ion-icon>
+        </a>
+      </div>
+
+      <!--tag usada geralmente quando vamos criar nosso rodapé-->
+      <footer>
+        Feito com ♥ pela
+        <a href="https://rocketseat.com.br" target="_blank">Rocketseat</a>
+      </footer>
+    </div>
+    <!--caixa genérica em que o browser não aplica estilos-->
+
+    <script
+      type="module"
+      src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"
+    ></script>
+    <script
+      nomodule
+      src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"
+    ></script>
+
+    <script src="./script.js"></script>
+  </body>
+</html>

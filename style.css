@@ -1,0 +1,188 @@
+/* seletor universal - todos os elementos: */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  /* box-sizing = medida do tamanho da caixa. border-box = será medido através da borda */
+}
+
+:root /* raiz */ {
+  --text-color: white;
+  --bg-url: url(./assets/bg-mobile.jpg);
+  --stroke-color: rgba(255, 255, 255, 0.5);
+  --surface-color: rgba(255, 255, 255, 0.1);
+  --surface-color-hover: rgba(255, 255, 255, 0.05);
+  --highlight-color: rgba(255, 255, 255, 0.2);
+  --switch-bg-url: url(./assets/moon-stars.svg);
+}
+
+.light {
+  --text-color: black;
+  --bg-url: url(./assets/bg-mobile-light.jpg);
+  --stroke-color: rgba(0, 0, 0, 0.5);
+  --surface-color: rgba(0, 0, 0, 0.05);
+  --surface-color-hover: rgba(0, 0, 0, 0.02);
+  --highlight-color: rgba(0, 0, 0, 0.1);
+  --switch-bg-url: url(./assets/sun.svg);
+}
+
+body {
+  /*
+  background-image: url(./assets/bg-mobile.jpg);
+    /* url = função que recebe o valor de onde, no mundo, está a minha imagem
+  background-repeat: no-repeat;
+    /* por padrão, a imagem repete na página, com essa função (no-repeat) ela para de repetir 
+  background-position: top center;
+    /* eixo x = horizontal; eixo y = vertical
+    /* top center = função que posiciona a imagem no centro a partir do topo da página
+  background-size: cover;
+    /* background-size = definir tamanho */
+  /* cover (cobrir) = cobre toda a área visível
+
+  /* transformando todas as etapadas acima em um agrupamento. Chamamos essa propriedade de "shorthand" ou "atalho": */
+
+  background: var(--bg-url) no-repeat top center/cover;
+}
+
+/* "*" = seletor universal */
+body * {
+  font-family: "Inter", sans-serif;
+  color: var(--text-color);
+}
+
+#conteiner {
+  width: 360px;
+  margin: 56px auto 0px;
+  padding: 0 24px;
+}
+
+/* profile (perfil)*/
+#profile {
+  text-align: center;
+  padding: 24px;
+}
+
+#profile img {
+  width: 112px;
+}
+
+#profile p {
+  font-weight: 500;
+  /* front-weight = negrito */
+  /* "font-size: 16px;" - não é necessário colocar pq por padrão os navegadores já tem essa medida */
+  line-height: 24px;
+  /* altura da linha */
+  margin-top: 8px;
+}
+
+/* switch (troca) */
+#switch {
+  position: relative;
+  /* a posição absoluta será relativa à esse elemento */
+  width: 64px;
+  margin: 4px auto;
+}
+
+#switch button {
+  width: 32px;
+  height: 32px;
+  background: white var(--switch-bg-url) no-repeat center;
+  border: 0;
+  border-radius: 50%;
+  /* é utilizado 50% para deixar o item bem arredondado */
+
+  position: absolute;
+  /* quando o posicionamento é absoluto, ele faz uma sobreposição de camadas */
+  top: 50%;
+  left: 0;
+  z-index: 1;
+  /* mudei o andar para 1 */
+  transform: translateY(-50%);
+  /* o transform, como o nome ja diz, transforma um elemento de diversas formas, como por exemplo, rotacionar. O translateY utiliza uma ideia de eixo (Y = vertical e X = horizontal) p/ movimentar o elemento p/ cima ou p/ baixo */
+
+  /* esse é um exemplo de como alinhar um elemento utilizando mudança de eixo verticalmente, tornando o meio do elemento como "topo" */
+}
+
+.light #switch button {
+  right: 0;
+  left: initial;
+  /* left volta p/ sua maneira inicial */
+}
+
+#switch span {
+  display: block;
+  width: 64px;
+  height: 24px;
+  background: var(--surface-color);
+  border: 1px solid var(--stroke-color);
+  -webkit-backdrop-filter: blur(4px);
+  border-radius: 9999px;
+}
+
+/* links - list (lista) */
+ul {
+  list-style: none;
+  /* list-style = estilo da lista; none = nenhum */
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  padding: 24px;
+}
+
+ul li a {
+  display: flex;
+  /* o display flex deixa os elementos dentro da caixa, tentando se encaixar; cria uma linha virtual, o eixo principal */
+  justify-content: center;
+  /* alinha os itens no centro do conteiner */
+  align-items: center;
+  /* alinha os itens no centro do eixo principal */
+  padding: 16px 24px;
+  background: var(--surface-color);
+  /* rgba (red, blue, green e alfa); 0 = cor mais baixa, 255 = cor mais alta; 0.1 = transparência */
+  border: 1px solid var(--stroke-color);
+  border-radius: 8px;
+  backdrop-filter: blur(4px);
+  /* coloca um blur (embaçado) no elemento */
+  -webkit-backdrop-filter: blur(4px);
+  /* -webkit- = tipo de prefixo que alguns browsers usam p/ poder liberar */
+  text-decoration: none;
+  /* remove as "decorações" do texto, no caso, a linha */
+  font-weight: 500;
+  transition: background 0.2s;
+  /* se o elemento fosse "all", por exemplo, ele transicionaria todos os elementos, no meu caso, está transicionando somente o background */
+}
+
+/* pseudo-selector = aplicamos algo quando passamos o mouse em cima*/
+ul li a:hover {
+  background: var(--surface-color-hover);
+  border: 1.5px solid var(--text-color);
+}
+
+/* social links (links sociais) */
+#social-links {
+  display: flex;
+  justify-content: center;
+  padding: 24px 0;
+  font-size: 24px;
+}
+
+#social-links a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 16px;
+
+  transition: 0.2s;
+  border-radius: 50%;
+}
+
+#social-links a:hover {
+  background: var(--highlight-color);
+}
+
+/* rodapé */
+footer {
+  padding: 24px 0;
+  text-align: center;
+  font-size: 14px;
+}
